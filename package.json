@@ -1,21 +1,39 @@
 {
   "name": "be-syndicating",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "custom-element",
+    "custom-elements"
+  ],
+  "description": "Provides base class for be-decorated element behaviors / decorators, that syndicate data / events from an assortment of elements within the Shadow DOM realm.",
+  "main": "be-syndicating.js",
+  "module": "be-syndicating.js",
+  "exports": {
+    ".": "./be-syndicating.js",
+    "./be-syndicating.js": "./be-syndicating.js"
+  },
+  "files": [
+    "*.*"
+  ],
+  "types": "types.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "package-check": "package-check"
   },
   "dependencies": {
     "be-decorated": "0.0.161",
     "be-observant": "0.0.143",
     "trans-render": "0.0.608"
   },
+  "devDependencies": {
+    "@skypack/package-check": "0.2.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bahrus/be-syndicating.git"
   },
-  "author": "",
+  "author": "Bruce B. Anderson <anderson.bruce.b@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bahrus/be-syndicating/issues"
