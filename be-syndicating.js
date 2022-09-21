@@ -17,11 +17,12 @@ export class BeSyndicating {
         const explicit = [];
         for (const arg of arr) {
             if (typeof arg === 'string') {
-                const obs = {
-                    [pp.defaultObserveType]: arg,
-                    "on": pp.defaultEventType,
-                    "vft": pp.defaultProp,
-                };
+                // const obs: IObserve = {
+                //     [pp.defaultObserveType!]: arg,
+                //     "on": pp.defaultEventType,
+                //     "vft": pp.defaultProp,
+                // };
+                const obs = this.strArgToIObs(pp, arg);
                 autoConstructed[arg] = obs;
                 hasAuto = true;
             }

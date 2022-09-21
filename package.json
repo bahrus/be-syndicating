@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "be-decorated": "0.0.161",
-    "be-observant": "0.0.143",
+    "be-observant": "0.0.145",
     "trans-render": "0.0.608"
   },
   "devDependencies": {

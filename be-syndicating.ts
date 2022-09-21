@@ -2,7 +2,7 @@ import {PropertyBag} from 'trans-render/lib/PropertyBag.js';
 import {Actions, PP, Proxy} from './types';
 import {IObserve, PropObserveMap} from 'be-observant/types';
 
-export class BeSyndicating implements Actions{
+export abstract class BeSyndicating implements Actions{
     syndicate!: EventTarget;
     #propertyBag!: PropertyBag; 
     constructor(){
@@ -23,11 +23,12 @@ export class BeSyndicating implements Actions{
             
             if(typeof arg === 'string'){
 
-                const obs: IObserve = {
-                    [pp.defaultObserveType!]: arg,
-                    "on": pp.defaultEventType,
-                    "vft": pp.defaultProp,
-                };
+                // const obs: IObserve = {
+                //     [pp.defaultObserveType!]: arg,
+                //     "on": pp.defaultEventType,
+                //     "vft": pp.defaultProp,
+                // };
+                const obs = this.strArgToIObs(pp, arg);
                 autoConstructed[arg] = obs;
                 hasAuto = true;
             }else{
@@ -38,8 +39,9 @@ export class BeSyndicating implements Actions{
         for(const pom of explicit){
             await this.#doParams(pom, self, proxy);
         }
-        
     }
+
+    abstract strArgToIObs(pp: PP, arg: string): IObserve;
 
     async #doParams(params: PropObserveMap, self: Element, proxy: Proxy){
         const {hookUp} = await import('be-observant/hookUp.js');
