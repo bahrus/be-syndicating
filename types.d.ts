@@ -11,7 +11,7 @@ export interface EndUserProps<Props = any, Actions = Props, TEvent = Event>{
     // defaultEventType?: string,
 }
 
-export interface VirtualProps extends EndUserProps, MinimalProxy{
+export interface VirtualProps<T=Element> extends EndUserProps, MinimalProxy<T>{
     props?: Set<string>;
 }
 
