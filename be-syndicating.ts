@@ -54,7 +54,7 @@ export abstract class BeSyndicating implements Actions{
             const key = startsWithHat ? lastKey : propKey;
             const info = await hookUp(parm, [self, syndicate], key);
             props.add(key);
-            this.#externalControllers!.push(info.controller!);
+            this.#externalControllers!.push(info!.controller!);
             if(!startsWithHat) lastKey = propKey;
         }
         proxy.props = props;  
