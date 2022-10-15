@@ -22,8 +22,8 @@
     "package-check": "package-check"
   },
   "dependencies": {
-    "be-decorated": "0.0.176",
-    "be-observant": "0.0.153",
+    "be-decorated": "0.0.177",
+    "be-observant": "0.0.154",
     "trans-render": "0.0.626"
   },
   "devDependencies": {
