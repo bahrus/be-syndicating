@@ -22,9 +22,9 @@
     "package-check": "package-check"
   },
   "dependencies": {
-    "be-decorated": "0.0.177",
-    "be-observant": "0.0.154",
-    "trans-render": "0.0.626"
+    "be-decorated": "0.0.182",
+    "be-observant": "0.0.155",
+    "trans-render": "0.0.628"
   },
   "devDependencies": {
     "@skypack/package-check": "0.2.2"
