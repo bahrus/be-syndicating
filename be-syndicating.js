@@ -1,8 +1,9 @@
 import { PropertyBag } from 'trans-render/lib/PropertyBag.js';
-export class BeSyndicating {
+export class BeSyndicating extends EventTarget {
     syndicate;
     #propertyBag;
     constructor() {
+        super();
         this.#propertyBag = new PropertyBag();
         this.syndicate = this.#propertyBag.proxy;
     }
@@ -17,11 +18,6 @@ export class BeSyndicating {
         const explicit = [];
         for (const arg of arr) {
             if (typeof arg === 'string') {
-                // const obs: IObserve = {
-                //     [pp.defaultObserveType!]: arg,
-                //     "on": pp.defaultEventType,
-                //     "vft": pp.defaultProp,
-                // };
                 const obs = this.strArgToIObs(pp, arg);
                 autoConstructed[arg] = obs;
                 hasAuto = true;
